@@ -37,60 +37,68 @@ public class FbBrowser {
 	    driver.findElement(By.xpath(".//*[@id='u_0_0']/div[2]/div/div[2]/a")).click();
 	}
 
-	@Then("^the user should be able to click \"([^\"]*)\" and enter the Testappium$")
-	public void the_user_should_be_able_to_enter_and_enter_the_Testappium(String arg1) throws Throwable {
-	   
+//Entering User FirstName
+	@Then("^the user should be able to enter FirstName and enter the \"([^\"]*)\"$")
+	public void the_user_should_be_able_to_enter_FirstName_and_enter_the(String firstname) throws Throwable {
+	   System.out.println(firstname);
+	   driver.findElement(By.xpath(".//*[@id='u_0_0']/input")).sendKeys(firstname);
 	}
-
-	@Then("^the user should be able to enter \"([^\"]*)\" and enter the Test$")
-	public void the_user_should_be_able_to_enter_and_enter_the_Test(String arg1) throws Throwable {
-	   
+	//Entering User LastName
+	@Then("^the user should be able to enter LastName and enter  \"([^\"]*)\"$")
+	public void the_user_should_be_able_to_enter_LastName_and_enter(String lastname) throws Throwable {
+		System.out.println(lastname);
+		driver.findElement(By.xpath(".//*[@id='u_0_1']/input")).sendKeys(lastname);
 	}
-
-	@Then("^the user should be able to enter \"([^\"]*)\" and enter the testappium(\\d+)@gmail\\.com$")
-	public void the_user_should_be_able_to_enter_and_enter_the_testappium_gmail_com(String arg1, int arg2) throws Throwable {
-	    
+	//Entering User emailID
+	@Then("^the user should be able to enter email and enter the \"([^\"]*)\"$")
+	public void the_user_should_be_able_to_enter_email_and_enter_the(String email) throws Throwable {
+		System.out.println(email);
+		driver.findElement(By.xpath(".//*[@id='u_0_2']/input")).sendKeys(email);
 	}
-
-	@Then("^the user should be able to enter \"([^\"]*)\" and enter the male$")
-	public void the_user_should_be_able_to_enter_and_enter_the_male(String arg1) throws Throwable {
-	   
+	//Entering User Gender
+	@Then("^the user should be able to enter gender and enter the \"([^\"]*)\"$")
+	public void the_user_should_be_able_to_enter_gender_and_enter_the(String gender) throws Throwable {
+		System.out.println(gender);  
+		Select gender1 = new Select(driver.findElement(By.xpath(".//*[@id='sex']")));
+		gender1.selectByValue("2");
 	}
-
-	@Then("^the user should be able to enter \"([^\"]*)\" and enter (\\d+)$")
-	public void the_user_should_be_able_to_enter_and_enter(String arg1, int arg2) throws Throwable {
-	  
+	//Entering User DOB-Month
+	@Then("^the user should be able to enter dd and enter \"([^\"]*)\"$")
+	public void the_user_should_be_able_to_enter_dd_and_enter(String mm) throws Throwable {
+		System.out.println(mm); 
+		driver.findElement(By.xpath(".//*[@id='birthday_month']")).sendKeys(mm);
 	}
-
-	@Then("^the user should be able to enter \"([^\"]*)\" and enter  (\\d+)$")
-	public void the_user_should_be_able_to_enter_and_enter1(String arg1, int arg2) throws Throwable {
-	    
+	//Entering User DOB-Date
+	@Then("^the user should be able to enter mm and enter  \"([^\"]*)\"$")
+	public void the_user_should_be_able_to_enter_mm_and_enter(String dd) throws Throwable {
+		System.out.println(dd);  
+		driver.findElement(By.xpath(".//*[@id='birthday_day']")).sendKeys(dd);
 	}
-
-	@Then("^user should be able to enter \"([^\"]*)\" and enter (\\d+)$")
-	public void user_should_be_able_to_enter_and_enter(String arg1, int arg2) throws Throwable {
-	
+	//Entering User DOB-Year
+	@Then("^user should be able to enter YYYY and enter \"([^\"]*)\"$")
+	public void user_should_be_able_to_enter_YYYY_and_enter(String YYYY) throws Throwable {
+		System.out.println(YYYY); 
+		driver.findElement(By.xpath(".//*[@id='birthday_year']")).sendKeys(YYYY);
 	}
-
-	@Then("^the user should be able to enter \"([^\"]*)\" and enter the jaisairam(\\d+)=$")
-	public void the_user_should_be_able_to_enter_and_enter_the_jaisairam(String arg1, int arg2) throws Throwable {
-	   
+	//Entering User account password creation
+	@Then("^the user should be able to enter password and enter the \"([^\"]*)\"$")
+	public void the_user_should_be_able_to_enter_password_and_enter_the(String password) throws Throwable {
+		System.out.println(password); 
+		driver.findElement(By.xpath(".//*[@id='u_0_3']/input")).sendKeys(password);
 	}
-
+    //Clicking signup button
 	@When("^the user got \"([^\"]*)\" and logged in to account$")
-	public void the_user_got_and_logged_in_to_account(String arg1) throws Throwable {
-	    
+	public void the_user_got_and_logged_in_to_account(String singin) throws Throwable {
+		driver.findElement(By.xpath(".//*[@id='signup_button']")).click();
 	}
 
 	@Then("^the user should be able to navigate on the FB home page to update the contacts \"([^\"]*)\"$")
-	public void the_user_should_be_able_to_navigate_on_the_FB_home_page_to_update_the_contacts(String arg1) throws Throwable {
-	    
+	public void the_user_should_be_able_to_navigate_on_the_FB_home_page_to_update_the_contacts(String sync) throws Throwable {
+		
 	}
 
 	@Then("^the user should be able to \"([^\"]*)\"$")
-	public void the_user_should_be_able_to(String arg1) throws Throwable {
-	   
+	public void the_user_should_be_able_to(String logout) throws Throwable {
+		//driver.quit();	
 	}
-	
 }
-*/
